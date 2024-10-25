@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!--
+    <div class="col-sm-6 row form-group px-0">
+        <button type="check" id="btn_login" class="btn btn-success col-sm-12">Login</button>
+    </div>
+    
+
+    <div class="col-sm-6 row form-group px-0">
+        <button id="btn_continue" class="col-sm-12">go to main</button>
+    </div>
+    -->
+    <div class="Header" >
+        <div class="MusicMusicListFilled" style="width: 40px; height: 40px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+            
+            <img src="music-dropdown.png" alt="dropdown" id="home" style="width: 29.17px; height: 25.83px; background: #33333300; cursor: pointer;"></img>
+        </div>
+        
+        <button class="AboutButton" id="about">
+            <div class="About"">About</div>
+        </button>
+    </div>
+
+    <div class="Main">
+        <div style="left: 434px; top: 100px; position: absolute; color: #333333; font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-weight: 700; word-wrap: break-word">How would you like to import your seed song(s)?</div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 0; position: absolute; left: 701px; top: 250px;">
+            <div style="width: 1px; height: 120px; background-color: #95B7D0;"></div>
+            <div style="color: #333333; font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-style: italic; font-weight: 400;">OR</div>
+            <div style="width: 1px; height: 120px;  background-color: #95B7D0;"></div>
+        </div>
+        
+        
+        <div style="width: 409px; height: 86px; left: 153px; top: 400px; position: absolute; color: #333333; font-size: 16px; font-family: Arial, Helvetica, sans-serif; font-weight: 400; word-wrap: break-word">If you choose to enter your seed song(s) manually, a pop up will ensure that the intended song is used. You will be able to adjust the desired musical features after confirming the song.</div>
+        <div style="width: 405px; height: 92px; left: 899px; top: 400px; position: absolute; color: #333333; font-size: 16px; font-family: Arial, Helvetica, sans-serif; font-weight: 400; word-wrap: break-word">If you choose to enter your seed song(s) via spreadsheet, please download the template spreadsheet and then format your songs accordingly. You will be able to adjust the desired musical features after uploading the spreadsheet.</div>
+        <button id="btn_manual" class="btn-continue" style="width: 240px; height: 48px; padding-left: 56px; padding-right: 56px; padding-top: 14px; padding-bottom: 14px; left: 232px; top: 300px; position: absolute; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+            <div style="text-align: center; color: #333333; font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-style: italic; font-weight: 700; word-wrap: break-word">enter manually</div>
+            <img src="arrow.png" class="arrow"></img>
+        </button>
+        <button id="btn_spreadsheet" class="btn-continue" style="width: 256px; height: 48px; padding-left: 56px; padding-right: 56px; padding-top: 14px; padding-bottom: 14px; left: 952px; top: 300px; position: absolute; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+            <div style="text-align: center; color: #333333; font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-style: italic; font-weight: 700; word-wrap: break-word">via spreadsheet</div>
+            <img src="arrow.png" class="arrow"></img>
+        </button>
+        <div style="width: 979px; height: 87px; padding-top: 6px; padding-bottom: 5px; padding-left: 60px; padding-right: 60px; left: 180px; top: 140px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
+            <div style="width: 859px; height: 76px; text-align: center; color: #333333; font-size: 16px; font-family: Arial, Helvetica, sans-serif; font-weight: 400; word-wrap: break-word">To begin the song matching process, you can either manually input a song & artist, or you can upload a file. Please select one of these options to continue.</div>
+        </div>
+
+    </div>
+    
+
+    <div class="Footer">
+        <div class="CreatedBySarahHennessyFromTheUscBrainAndMusicLab2024LosAngelesCaLastUpdatedMmDdYyyy" style="left: 482px; top: 20px; position: absolute; text-align: center; color: #333333; font-size: 16px; font-family: Arial, Helvetica, sans-serif; font-weight: 400; word-wrap: break-word">Created by Sarah Hennessy from the USC Brain and Music Lab. This is a personal project on Spotify's public APIs and does not represent Spotify.<br/>2024 ・ Los Angeles, CA ・ Last updated: MM/DD/YYYY</div>
+        <div class="CiteThisTool" style="width: 99px; height: 19px; left: 670px; top: 66px; position: absolute; justify-content: center; align-items: center; display: inline-flex" onclick="showCitation()">
+            <div class="CiteThisTool" style="text-align: center; color: #265a91; font-size: 16px; font-family: Arial, Helvetica, sans-serif; font-weight: 400; text-decoration: underline; word-wrap: break-word">Cite this Tool</div>
+        </div>
+
+        <div id="citationBox" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; padding: 20px; background-color: white; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border: 1px solid #333333; z-index: 1000;">
+            <p style="color: #333333; font-size: 16px; font-family: Arial, Helvetica, sans-serif; font-weight: 400; text-align: center; word-wrap: break-word;">
+                Hennessy, S., & Greer, T. (2024). SoundsLikeThis: A music matching tool for researchers and music-lovers [Computer software]. University of Southern California. SoundsLikeThis.us
+            </p>
+            <button onclick="hideCitation()" style="display: block; margin: 20px auto 0; padding: 10px 20px; font-size: 16px; background-color: #265a91; color: white; border: none; cursor: pointer;">Close</button>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+<script>
+       function showCitation() {
+        document.getElementById('citationBox').style.display = 'block';
+    }
+    function hideCitation() {
+        document.getElementById('citationBox').style.display = 'none';
+    }
+</script>
+<script src="choice.js"></script>
+<script src="about.js"></script>
+
+</html>
